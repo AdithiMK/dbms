@@ -1,0 +1,32 @@
+CREATE TABLE Student(
+  Student_Id INT PRIMARY KEY,
+  Student_name VARCHAR(100) NOT NULL,
+  Student_Address VARCHAR(590) NOT NULL
+);
+CREATE TABLE Faculty(
+  faculty_Id INT PRIMARY KEY,
+  faculty_name VARCHAR(100) NOT NULL,
+  faculty_Address VARCHAR(590) NOT NULL
+);
+
+INSERT INTO Student VALUES(1,"abc","BLR");
+INSERT INTO Student VALUES(2,"JOHN","KTKA");
+INSERT INTO Student VALUES(3,"abc","KERALA");
+SELECT * FROM Student;
+ALTER TABLE Student ADD Student_phone VARCHAR(100);
+ALTER TABLE Student ADD Student_birthdate VARCHAR(100);
+ALTER TABLE Student MODIFY Student_Address VARCHAR(20);
+ALTER TABLE Student RENAME COLUMN Student_name TO full_name;
+ALTER TABLE Student DROP COLUMN Student_birthdate;
+DESC Student;
+
+UPDATE Student SET Student_phone = "78787" WHERE Student_Id=1;
+UPDATE Student SET Student_phone = "99999" WHERE Student_Id=2;
+UPDATE Student SET Student_phone = "455454" WHERE Student_Id=3;
+SELECT * FROM Student;
+
+DELETE FROM Student WHERE Student_Id = 3;
+SELECT * FROM Student;
+
+DROP TABLE Student;
+SHOW TABLES;
